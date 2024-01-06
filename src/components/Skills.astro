@@ -10,37 +10,37 @@ import SkillItem from "./SkillItem.astro"
 
 const skills = [
   {
-    class: "bg-black text-white",
+    class: "bg-black",
     name: "Typescript",
     icon: Typescript 
   },
   {
-    class: "bg-black text-white",
+    class: "bg-black",
     name: "React",
     icon: React
   },
   {
-    class: "bg-black text-white",
+    class: "bg-black",
     name: "Tailwind",
     icon: Tailwind
   },
   {
-    class: "bg-black text-white",
+    class: "bg-black",
     name: "React Router Dom",
     icon: ReactRouterDom
   },
   {
-    class: "bg-black text-green-300",
+    class: "bg-black",
     name: "Excel",
     icon: Excel
   },
   {
-    class: "bg-black text-white",
+    class: "bg-black",
     name: "Prisma",
     icon: Prisma
   },
   {
-    class: "bg-black text-pink-300",
+    class: "bg-black",
     name: "Graphql",
     icon: Graphql
   }
@@ -50,8 +50,8 @@ const skills = [
 <ul class="flex flex-wrap justify-center gap-3 mb-2">
     {skills.map((skill) => (
       <li>
-        <SkillItem class="basis-auto flex-shrink">
-          <skill.icon class="size-4 md:size-6 text-black/70 dark:text-white/50"/>
+        <SkillItem class={`basis-auto flex-shrink ${skill.class} text-white`}>
+          <skill.icon class="size-4 md:size-6"/>
           {skill.name}
         </SkillItem>
       </li>
