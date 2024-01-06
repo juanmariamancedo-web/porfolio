@@ -10,6 +10,8 @@ import Experience from "../components/Experience.astro"
 import Briefcase from "../components/icons/Briefcase.astro"
 import CodeIcon from "../components/icons/Code.astro"
 import Projects from "../components/Projects.astro"
+import Skills from "../components/Skills.astro"
+import RocketLaunch from "../components/icons/RocketLaunch.astro"
 ---
 
 <Layout
@@ -74,6 +76,18 @@ import Projects from "../components/Projects.astro"
          Experiencia laboral
       </h2>
       <Experience />
+    </SectionContainer>
+    <SectionContainer id="habilidades">
+      <h2
+        class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80"
+      >
+        <RocketLaunch class="size-7" />
+         Habilidades
+      </h2>
+      <p>
+
+      </p>
+      <Skills />
     </SectionContainer>
 
     <SectionContainer id="proyectos">

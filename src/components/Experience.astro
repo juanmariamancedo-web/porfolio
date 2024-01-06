@@ -2,7 +2,7 @@
 import ExperienceItem from "./ExperienceItem.astro"
 const EXPERIENCIE = [
   {
-    date: "Actualmente...",
+    date: "Desde el 18 de Agosto de 2023...",
     title: "Encuestador post-venta − Sebastiani S.A.",
     description:
       "Encuesto a los/las clientes que realizan services y reparaciones de su vehículo en Sebastiani S.A., para de esa manera ser cada día mejores"
@@ -25,7 +25,7 @@ const EXPERIENCIE = [
 <ol class="relative border-s border-gray-200 ml-3">
   {
     EXPERIENCIE.map((experiencie) => (
-      <li class="mb-10 ms-4">
+      <li class="mb-10 ms-4 flex flex-col md:flex-row">
         <ExperienceItem {...experiencie} />
       </li>
     ))

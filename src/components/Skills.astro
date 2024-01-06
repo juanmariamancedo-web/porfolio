@@ -1,0 +1,59 @@
+---
+import Excel from "./icons/Excel.astro";
+import React from "./icons/React.astro";
+import ReactRouterDom from "./icons/ReactRouterDom.astro"
+import Tailwind from "./icons/Tailwind.astro";
+import Prisma from "./icons/Prisma.astro"
+import Graphql from "./icons/Graphql.astro"
+import Typescript from "./icons/Typescript.astro"
+import SkillItem from "./SkillItem.astro"
+
+const skills = [
+  {
+    class: "bg-black text-white",
+    name: "Typescript",
+    icon: Typescript 
+  },
+  {
+    class: "bg-black text-white",
+    name: "React",
+    icon: React
+  },
+  {
+    class: "bg-black text-white",
+    name: "Tailwind",
+    icon: Tailwind
+  },
+  {
+    class: "bg-black text-white",
+    name: "React Router Dom",
+    icon: ReactRouterDom
+  },
+  {
+    class: "bg-black text-green-300",
+    name: "Excel",
+    icon: Excel
+  },
+  {
+    class: "bg-black text-white",
+    name: "Prisma",
+    icon: Prisma
+  },
+  {
+    class: "bg-black text-pink-300",
+    name: "Graphql",
+    icon: Graphql
+  }
+]
+---
+
+<ul class="flex flex-wrap justify-center gap-3 mb-2">
+    {skills.map((skill) => (
+      <li>
+        <SkillItem class="basis-auto flex-shrink">
+          <skill.icon class="size-4 md:size-6 text-black/70 dark:text-white/50"/>
+          {skill.name}
+        </SkillItem>
+      </li>
+    ))}
+  </ul>

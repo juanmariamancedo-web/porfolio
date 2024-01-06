@@ -1,3 +1,9 @@
+---
+import ButtonOfDarkMode from "./ButtonOfDarkMode";
+import ReduxProvider from "./reduxProvider";
+
+---
+
 <header
   class={`
     flex justify-center items-center
@@ -12,23 +18,31 @@
     class={`
       border border-black rounded-full
       px-3 py-1
-      flex flex-row items-center
       bg-neutral-200 dark:bg-black/50
       backdrop-blur-2xl
+      dark:text-white
     `}
   >
-    <a
-      class="hover:bg-white/10 rounded-full px-3 transition"
-      href="#experiencia">Experiencia</a
-    >
-    <a class="hover:bg-white/10 rounded-full px-3 transition" href="#proyectos"
-      >Proyectos</a
-    >
-    <a class="hover:bg-white/10 rounded-full px-3 transition" href="#sobre-mi"
-      >Sobre mí</a
-    >
-    <a class="hover:bg-white/10 rounded-full px-3 transition" href="#contacto"
-      >Contacto</a
-    >
+  <ul class="flex justify-center items-center gap-3"> 
+    <li>
+      <a
+        class="hover:bg-white/10 rounded-full px-3 transition"
+        href="#experiencia">Experiencia</a
+      >
+    </li>
+    <li>
+      <a class="hover:bg-white/10 rounded-full px-3 transition" href="#proyectos"
+        >Proyectos</a
+      >
+    </li>
+    <li>
+      <a class="hover:bg-white/10 rounded-full px-3 transition" href="#sobre-mi"
+        >Sobre mí</a
+      >
+    </li>
+    <li>
+      <ButtonOfDarkMode client:load/>
+    </li>
+  </ul>
   </nav>
 </header>
