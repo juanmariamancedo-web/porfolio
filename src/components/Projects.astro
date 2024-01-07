@@ -1,57 +1,144 @@
 ---
-import NextJS from "./icons/NextJS.astro"
-import Tailwind from "./icons/Tailwind.astro"
+import CarouselProjects from "./CarouselProjects"
+import {type Resources} from "../models/Resources"
+import SocialPill from "./SocialPill.astro"
+import Enlace from "./icons/Enlace.astro"
+import GitHub from "./icons/GitHub.astro"
 
-const TAGS = {
-  NEXT: {
-    name: "Next.js",
-    class: "bg-black text-white",
-    icon: NextJS,
-  },
-  TAILWIND: {
-    name: "Tailwind CSS",
-    class: "bg-[#003159] text-white",
-    icon: Tailwind,
-  },
-}
 const PROJECTS = [
-  {
-    title: "SVGL - A beautiful library with SVG logos",
+{
+    title: "WhatsAuto",
     description:
-      "Created from scratch with Next.js and Tailwind CSS. It's a library with SVG logos from the most popular brands. Optimized for SEO and performance.",
-    link: "https://svgl.vercel.app/",
+    "Creado con Vite-Express, React, React Router Dom, Tailwind css, GraphQl, Prisma para la gestión de la base de datos y envio de emails con Resend. Está aplicación web cuenta con un panel de administración.",
     github: "https://github.com/pheralb/svgl",
-    image: "/projects/svgl.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+    images: [{
+      src: "/projects/Whatsauto/primera.png",
+      alt: "Whatsauto - Home"
+    },
+    {
+      src: "/projects/Whatsauto/segunda.png",
+      alt: "Whatsauto - Login"
+    },
+    {
+      src: "/projects/Whatsauto/tercera.png",
+      alt: "Whatsauto - I Forgot my password"
+    },
+    {
+      src: "/projects/Whatsauto/cuarta.png",
+      alt: "Whatsauto - Receive token for change password"
+    },
+    {
+      src: "/projects/Whatsauto/quinta.png",
+      alt: "Whatsauto - Receive token for change password"
+    },
+    {
+      src: "/projects/Whatsauto/sexta.png",
+      alt: "Whatsauto - Profile"
+    },
+    {
+      src: "/projects/Whatsauto/septima.png",
+      alt: "Whatsauto - Change avatar"
+    },
+    {
+      src: "/projects/Whatsauto/octava.png",
+      alt: "Whatsauto - Users"
+    },
+    {
+      src: "/projects/Whatsauto/novena.png",
+      alt: "Whatsauto - Sing Up"
+    },
+    {
+      src: "/projects/Whatsauto/decima.png",
+      alt: "Whatsauto - Menú adaptado para celulares"
+    },]
   },
+  {
+    title: "JModels",
+    description:
+      "Creado con Astro, React y Tailwind CSS. Es una página de una agencia de modelos ficticia. Responsive desing.",
+    link: "https://https://jmodels.netlify.app/",
+    github: "https://github.com/pheralb/svgl",
+    images: [{
+      src: "/projects/jmodels/primera.png",
+      alt: "JModels - Home"
+    },
+    {
+      src: "/projects/jmodels/segunda.png",
+      alt: "JModels - Portafolio de imagenes modelo Juan"
+    },
+    {
+      src: "/projects/jmodels/tercera.png",
+      alt: "JModels - Qué nos diferencia?"
+    },
+    {
+      src: "/projects/jmodels/cuarta.png",
+      alt: "JModels - Por qué elegirnos?"
+    },
+    {
+      src: "/projects/jmodels/quinta.png",
+      alt: "JModels - Menú adaptado para celulares"
+    },]
+  },
+  {
+    title: "JMarkdown",
+    description:
+      "Creado aplicando conocimientos de Astro, React y Tailwind CSS. Es una página para practica Markdown. Responsive desing.",
+    link: "https://jmarkdown.netlify.app/",
+    github: "https://github.com/pheralb/svgl",
+    images: [{
+      src: "/projects/jmarkdown/primera.png",
+      alt: "JMarkdown - Home"
+    },
+    {
+      src: "/projects/jmarkdown/segunda.png",
+      alt: "JMarkdown - Acerca de" 
+    }]
+  },
+  {
+    title: "Perrolandia",
+    description:
+      "Creado aplicando conocimientos de React, Axios y Bootstrap. Responsive desing.",
+    link: "https://perrolandia.netlify.app/",
+    github: "https://github.com/pheralb/svgl",
+    images: [{
+      src: "/projects/perrolandia/primera.png",
+      alt: "Perolandia - Home"
+    },
+    {
+      src: "/projects/perrolandia/segunda.png",
+      alt: "Perrolandia - Perros de diferentes razas" 
+    },
+    {
+      src: "/projects/perrolandia/tercera.png",
+      alt: "Perrolandia - Acerca de"
+    }]
+  }
 ]
 ---
 
 {
-  PROJECTS.map(({ image, title, description, tags }) => (
-    <article>
-      <h3 class="text-2xl font-semibold text-yellow-800 dark:text-yellow-200 mb-2">
+  PROJECTS.map(({title, description, images, link, github }) => (
+    <article class="py-3">
+      <h3 class="text-2xl font-semibold text-yellow-800 dark:text-yellow-200">
         {title}
       </h3>
-      <p class="text-lg mb-4 text-pretty">{description}</p>
-      <ul class="flex gap-x-2 flex-row mb-2">
-        {tags.map((tag) => (
-          <li>
-            <span
-              class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 border border-white/10`}
-            >
-              <tag.icon class="size-4" />
-              {tag.name}
-            </span>
-          </li>
-        ))}
-      </ul>
-      <img
-        loading="lazy"
-        class="rounded shadow-2xl shadow-white/10 aspect-video"
-        src={image}
-        alt={`Captura de pantalla del proyecto ${image}`}
-      />
+      <p class="text-lg text-pretty dark:text-gray-200">{description}</p>
+      <CarouselProjects images={images as [Resources]} client:load/>
+      <footer>
+        <h4 class="text-xl font-semibold text-black/80 dark:text-white/80 mb-2">Links de {title}</h4>
+        <nav class="flex gap-4 mt-8 flex-wrap">
+          <SocialPill href={github}>
+            <GitHub class="size-4 md:size-6" />
+            Github
+          </SocialPill>
+          {link && (
+            <SocialPill href={link}>
+              <Enlace class="size-4 md:size-6" />
+              {title}
+            </SocialPill>
+          )}
+        </nav>
+      </footer>
     </article>
   ))
 }
