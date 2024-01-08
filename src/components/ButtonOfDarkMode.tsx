@@ -1,17 +1,19 @@
 import { useEffect, useState } from 'react'
+import DarkMode from './icons/DarkMode'
+import LightMode from './icons/LightMode'
 
 export default function ButtonOfDarkMode(){
-    const [theme, setTheme] = useState("light")
+    const [theme, setTheme] = useState("dark")
    
     useEffect(()=>{
-        if(localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)){
-            document.body.classList.add("dark")
-            localStorage.theme = "dark"
-            setTheme("dark")
-        }else{
+        if(localStorage.theme != 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: light)').matches)){
             document.body.classList.remove("dark")
             localStorage.theme = "light"
             setTheme("light")
+        }else{
+            document.body.classList.add("dark")
+            localStorage.theme = "dark"
+            setTheme("dark")
         }
 
     }, [])
@@ -30,9 +32,7 @@ export default function ButtonOfDarkMode(){
 
     return(
         <button onClick={changeThemeMode} className="primary-button">
-            <span className="material-symbols-outlined align-middle">
-                {theme == "dark"? "light_mode" : "dark_mode"}
-            </span>
+                {theme == "dark"? <LightMode className="dark:text-white align-middle" />  : <DarkMode className="dark:text-white align-middle" />}
         </button>
     )
 }

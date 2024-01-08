@@ -50,7 +50,7 @@ const skills = [
 <ul class="flex flex-wrap justify-center gap-3 mb-2">
     {skills.map((skill) => (
       <li>
-        <SkillItem class={`basis-auto flex-shrink ${skill.class}`}>
+        <SkillItem class={`basis-auto flex-shrink ${skill.class} animation-scroll`}>
           <skill.icon class="size-4 md:size-6 text-black/80 dark:text-white/80"/>
           {skill.name}
         </SkillItem>

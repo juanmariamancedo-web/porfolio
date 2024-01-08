@@ -1,0 +1,21 @@
+@keyframes show {
+    from {
+        scale: 25%;
+        opacity: 0;
+    }
+    to {
+        scale: 100%;
+        opacity: 1;
+    }
+}
+
+.animation-scroll{
+    view-timeline-name: --scroll;
+    view-timeline-axis: block;
+
+    animation-timeline: --scroll;
+    animation-name: show;
+
+    animation-range: entry 25% cover 50%;
+    animation-fill-mode: both;
+}
