@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import DarkMode from './icons/DarkMode'
-import LightMode from './icons/LightMode'
+import DarkMode from '../icons/DarkMode'
+import LightMode from '../icons/LightMode'
 
 export default function ButtonOfDarkMode(){
     const [theme, setTheme] = useState("dark")

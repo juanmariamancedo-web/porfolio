@@ -1,5 +1,5 @@
 import { Carousel } from "flowbite-react"
-import type { Resources } from "../models/Resources"
+import type { Resources } from "../../models/Resources"
 
 interface Props {
     images: [Resources]
