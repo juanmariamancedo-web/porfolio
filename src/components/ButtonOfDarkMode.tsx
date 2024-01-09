@@ -31,7 +31,7 @@ export default function ButtonOfDarkMode(){
     }
 
     return(
-        <button onClick={changeThemeMode} className="primary-button">
+        <button onClick={changeThemeMode} className="flex justify-center items-center">
                 {theme == "dark"? <LightMode className="dark:text-white align-middle" />  : <DarkMode className="dark:text-white align-middle" />}
         </button>
     )
