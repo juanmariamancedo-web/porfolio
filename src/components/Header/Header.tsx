@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from "react"
+import { useEffect, useState} from "react"
 import ButtonOfDarkMode from "./ButtonOfDarkMode";
 import SwitchOpen from "./SwitchOpen";
 
@@ -28,7 +28,7 @@ export function Header(){
                 </div>
                 <div className={`${open? "translate-x-full": ""} 
                                 bg-neutral-200/50 dark:bg-black/50
-                                backdrop-blur-2xl md:backdrop-blur-0 dark:text-white 
+                                backdrop-blur-2xl md:backdrop-blur-0 dark:text-white
                                 md:bg-transparent md:dark:bg-transparent md:transition-none
                                 z-20 md:z-auto
                                 fixed inset-y-0 -left-full right-full 
